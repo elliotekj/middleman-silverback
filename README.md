@@ -74,10 +74,10 @@ documented within `config.rb`. Here's a rundown of them:
 ## Contributing
 
 1. Fork it
-2. Create your feature branch (git checkout -b my-new-feature)
-3. Commit your changes (git commit -am 'Add some feature')
+2. Create your feature branch (`git checkout -b my-new-feature`)
+3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Make sure `scss_lint` and `rubocop` pass
-5. Push to the branch (git push origin my-new-feature)
+5. Push to the branch (`git push origin my-new-feature`)
 6. Create new [pull request][]
 
 ## License
