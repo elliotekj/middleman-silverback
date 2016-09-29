@@ -1,0 +1,56 @@
+.sidebar {
+  color: $col-light;
+  float: left;
+  font-family: $type-serif;
+  font-size: $fs-sm;
+  padding: 0 0 0 $space-lg;
+  width: 33.33%;
+
+  @media (max-width: $breakpoint-med) {
+    padding-left: $space-lg * $breakpoint-med-scale;
+  }
+
+  @media (max-width: $breakpoint-xs) {
+    float: none;
+    margin-top: $space-lg * $breakpoint-xs-scale;
+    padding-left: 0;
+    width: 100%;
+  }
+
+  &__module {
+    margin-bottom: $space-md;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  h3 {
+    font-size: $fs-h4;
+    margin-bottom: $space-sm;
+  }
+
+  ol {
+    list-style: none;
+  }
+
+  li {
+    margin-bottom: $space-sm;
+  }
+
+  a {
+    color: $col-body;
+
+    &:hover {
+      color: $col-accent;
+    }
+  }
+}
+
+.module {
+  &__list-prefix {
+    bottom: -1px;
+    margin-right: 3px;
+    position: relative;
+  }
+}

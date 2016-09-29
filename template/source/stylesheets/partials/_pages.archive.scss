@@ -1,0 +1,55 @@
+.archive {
+  &__year {
+    color: $col-light;
+    float: left;
+  }
+
+  ol {
+    list-style: none;
+    margin-bottom: $space-md;
+    margin-left: $type-base * 6;
+
+    @media (max-width: $breakpoint-xs) {
+      margin-left: $type-base * 5;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &--calendar {
+    ol {
+      margin-left: 0;
+    }
+  }
+
+  li {
+    margin-bottom: $type-base;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__time {
+    color: $col-light;
+    float: left;
+  }
+
+  &__title {
+    margin-left: $type-base * 5.5;
+
+    @media (max-width: $breakpoint-xs) {
+      margin-left: $type-base * 4.5;
+    }
+  }
+
+  a {
+    color: $col-body;
+
+    &:hover {
+      color: $col-accent;
+    }
+  }
+}

@@ -1,0 +1,42 @@
+<aside class="sidebar">
+  <% if blog_settings.description && blog_settings.sidebar_show_description %>
+    <div class="sidebar__module module">
+      <p>
+      <%= '<span class="module__list-prefix">' + blog_settings.sidebar_description_prefix + '</span>' unless blog_settings.sidebar_description_prefix.nil? %>
+      <%= blog_settings.description %>
+      </p>
+    </div>
+  <% end %>
+
+  <% if blog_settings.sidebar_show_articles %>
+    <div class="sidebar__module module">
+      <h3>Recently Posted</h3>
+
+      <ol>
+        <% blog.articles[0...10].each do |article| %>
+          <li>
+            <%= '<span class="module__list-prefix">' + blog_settings.sidebar_articles_prefix + '</span>' unless blog_settings.sidebar_articles_prefix.nil? %>
+            <%= link_to article.title, article %>
+          </li>
+        <% end %>
+      </ol>
+    </div>
+  <% end %>
+
+  <% if blog_settings.sidebar_show_archives %>
+    <div class="sidebar__module module">
+      <h3>Archives</h3>
+
+      <% blog.articles.group_by {|y| y.date.year }.each do |year, articles| %>
+        <ol>
+          <% articles.group_by {|a| a.date.month}.each do |month, month_articles| %>
+            <li>
+              <%= '<span class="module__list-prefix">' + blog_settings.sidebar_archives_prefix + '</span>' unless blog_settings.sidebar_archives_prefix.nil? %>
+              <%= link_to month_articles.first.date.strftime('%B %Y'), blog_month_path(year, month) %>
+            </li>
+          <% end %>
+        </ol>
+      <% end %>
+    </div>
+  <% end %>
+</aside>

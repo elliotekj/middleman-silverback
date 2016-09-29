@@ -1,0 +1,41 @@
+.site-footer {
+  color: rgba($col-footer, 0.8);
+  font-family: $type-sans;
+  font-size: $fs-sm;
+  margin: $type-base auto;
+  max-width: $layout-container;
+  text-shadow: 0 1px 1px rgba($shadow-base, 0.2);
+
+  @media (max-width: $breakpoint-sm) {
+    padding-left: $type-base;
+    padding-right: $type-base;
+  }
+
+  &::before,
+  &::after {
+    content: " ";
+    display: table;
+  }
+
+  &::after {
+    clear: both;
+  }
+
+  &__column {
+    float: left;
+    width: 50%;
+
+    &:last-of-type {
+      text-align: right;
+    }
+  }
+
+  a {
+    border-bottom: 1px solid rgba($col-footer, 0.6);
+    color: rgba($col-footer, 0.8);
+
+    &:hover {
+      color: $col-footer;
+    }
+  }
+}

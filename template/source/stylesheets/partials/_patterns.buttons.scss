@@ -1,0 +1,21 @@
+.button,
+.post__body .button {
+  border-bottom: 0;
+  border-radius: $bd-radius / 2;
+  box-shadow: inset 0 0 0 1px rgba($shadow-base, 0.08),
+              0 1px 1px rgba($shadow-base, 0.1);
+  font-family: $type-sans;
+  font-size: $fs-sm;
+  font-weight: 500;
+  padding: $btn-padding;
+
+  &--main {
+    background: linear-gradient(to bottom, $btn-main-base, darken($btn-main-base, 5));
+    color: $btn-main-text;
+
+    &:hover {
+      background: linear-gradient(to bottom, darken($btn-main-base, 2.5), darken($btn-main-base, 7.5));
+      color: $btn-main-text;
+    }
+  }
+}

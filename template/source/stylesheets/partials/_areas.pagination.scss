@@ -1,0 +1,37 @@
+.pagination {
+  &::before,
+  &::after {
+    content: " ";
+    display: table;
+  }
+
+  &::after {
+    clear: both;
+  }
+
+  &__column {
+    float: left;
+    width: 33.33%;
+
+    &:nth-of-type(2) {
+      text-align: center;
+    }
+
+    &:last-of-type {
+      text-align: right;
+    }
+  }
+
+  &--inactive {
+    color: $col-light;
+  }
+
+  a {
+    border-bottom: $bd-width solid $col-accent;
+    color: $col-body;
+
+    &:hover {
+      color: $col-accent;
+    }
+  }
+}

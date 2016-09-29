@@ -1,0 +1,45 @@
+---
+pageable: true
+per_page: 6
+---
+
+<% page_articles.each_with_index do |article, i| %>
+  <article class="post post--list">
+    <header class="post__header">
+      <h2><%= link_to article.title, article %></h2>
+      <span class="post__meta">
+        By <%= blog_settings.author.upcase %> on
+        <time datetime="<%= article.date.iso8601 %>"><%= article.date.strftime('%B %e, %Y') %></time>
+      </span>
+    </header>
+
+    <div class="post__body">
+      <%= article.summary %>
+      <%= link_to blog_settings.read_more_text, article, { class: 'button button--main' } %>
+    </div>
+  </article>
+<% end %>
+
+<% if paginate && num_pages > 1 %>
+  <nav class="pagination">
+    <div class="pagination__column<%= ' pagination--inactive' unless next_page %>">
+      <% if next_page %>
+        <%= link_to blog_settings.pagination_next_text, next_page %>
+      <% else %>
+        <%= blog_settings.pagination_next_text %>
+      <% end %>
+    </div>
+
+    <div class="pagination__column">
+      <%= link_to 'The Archive', '/archive' %>
+    </div>
+
+    <div class="pagination__column<%= ' pagination--inactive' unless prev_page %>">
+      <% if prev_page %>
+        <%= link_to blog_settings.pagination_prev_text, prev_page %>
+      <% else %>
+        <%= blog_settings.pagination_prev_text %>
+      <% end %>
+    </div>
+  </nav>
+<% end %>

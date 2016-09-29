@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1' />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title><%= current_article.title + ' | ' unless current_article.nil? %><%= blog_settings.title %></title>
+    <%= stylesheet_link_tag 'styles' %>
+    <%= stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Bitter:400,400i,700' %>
+    <%= feed_tag :atom, blog.options.prefix.to_s + '/feed.xml', title: blog_settings.title + ' atom feed' %>
+  </head>
+  <body>
+    <%= partial 'partials/header' %>
+
+    <div class="container">
+      <div class="wrapper">
+        <div class="main">
+          <%= yield %>
+        </div>
+
+        <%= partial 'partials/sidebar' %>
+      </div>
+    </div>
+
+    <%= partial 'partials/footer' %>
+  </body>
+</html>

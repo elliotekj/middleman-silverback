@@ -1,0 +1,12 @@
+<% wrap_layout :body do %>
+  <article class="post post--single">
+    <header class="post__header">
+      <h2><%= current_article.title %></h2>
+      <span class="post__meta">By <%= blog_settings.author.upcase %> on <%= current_article.date.strftime('%B %e, %Y') %></span>
+    </header>
+
+    <div class="post__body">
+      <%= current_article.body %>
+    </div>
+  </article>
+<% end %>

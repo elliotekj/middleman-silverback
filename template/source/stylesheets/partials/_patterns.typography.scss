@@ -1,0 +1,87 @@
+h1,
+h2,
+h3,
+h4 {
+  color: $col-headings;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+h1 {
+  font-size: $fs-h1;
+}
+
+h2 {
+  font-size: $fs-h2;
+}
+
+h3 {
+  font-size: $fs-h3;
+}
+
+h4 {
+  font-size: $fs-h4;
+}
+
+h5 {
+  font-size: $fs-h5;
+}
+
+h6 {
+  font-size: $fs-h6;
+}
+
+.heading--title {
+  border-bottom: 1px solid $bg-light;
+  margin-bottom: $space-md;
+  padding-bottom: $space-sm;
+}
+
+p {
+  margin-bottom: $type-base;
+}
+
+a {
+  text-decoration: none;
+  transition: color 0.1s linear;
+}
+
+blockquote {
+  background: $bg-light;
+  border-radius: $bd-radius;
+  padding: $type-base;
+
+  &::before,
+  &::after {
+    color: $col-light;
+    display: block;
+    font-family: $type-mono;
+    font-size: $fs-sm;
+  }
+
+  &::before {
+    content: "<blockquote>";
+    margin-bottom: $type-base;
+  }
+
+  &::after {
+    content: "</blockquote>";
+    margin-top: $type-base;
+  }
+
+  *:last-child {
+    margin-bottom: 0;
+  }
+}
+
+mark {
+  background: $col-highlight;
+  border-radius: $bd-radius;
+  color: $col-body;
+  padding: 2px 4px;
+}
+
+hr {
+  border: 0;
+  border-top: $bd-width solid $bg-light;
+}

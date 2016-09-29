@@ -1,0 +1,11 @@
+<% wrap_layout :body do %>
+  <article class="post post--single">
+    <header class="post__header">
+      <h2><%= current_page.data.title %></h2>
+    </header>
+
+    <div class="post__body">
+      <%= yield %>
+    </div>
+  </article>
+<% end %>

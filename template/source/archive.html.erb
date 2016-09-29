@@ -1,0 +1,16 @@
+<h2 class="heading--title">The Archive</h2>
+
+<div class="archive">
+  <% blog.articles.group_by {|y| y.date.year }.each do |year, articles| %>
+    <h3 class="archive__year"><%= year %></h3>
+
+    <ol>
+      <% articles.each do |article| %>
+        <li>
+          <time class="archive__time" datetime="<%= article.date.iso8601 %>"><%= article.date.strftime('%b %e') %></time>
+          <h4 class="archive__title"><%= link_to article.title, article %></h4>
+        </li>
+      <% end %>
+    </ol>
+  <% end %>
+</div>

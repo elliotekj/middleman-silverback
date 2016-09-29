@@ -1,0 +1,43 @@
+// TOOLS
+// variables............................
+//
+// BASE
+// reset................................
+// body.................................
+// layout...............................
+//
+// PATTERNS
+// typography...........................
+// syntax...............................
+// media................................
+// buttons..............................
+//
+// AREAS
+// header...............................
+// main.................................
+// sidebar..............................
+// footer...............................
+//
+// PAGES
+// archive..............................
+
+@charset "UTF-8";
+
+@import "partials/tools.variables";
+
+@import "partials/base.reset";
+@import "partials/base.body";
+@import "partials/base.layout";
+
+@import "partials/patterns.typography";
+@import "partials/patterns.syntax";
+@import "partials/patterns.media";
+@import "partials/patterns.buttons";
+
+@import "partials/areas.header";
+@import "partials/areas.main";
+@import "partials/areas.pagination";
+@import "partials/areas.sidebar";
+@import "partials/areas.footer";
+
+@import "partials/pages.archive";

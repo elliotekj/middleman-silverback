@@ -1,0 +1,17 @@
+<header class="site-header">
+  <div class="wrapper">
+    <div class="site-header__avatar">
+      <% link_to blog_settings.home_url do %>
+        <%= tag :img, src: blog_settings.avatar_url %>
+      <% end %>
+    </div>
+
+    <div class="site-header__copy">
+      <h1><%= link_to blog_settings.title, blog_settings.home_url %></h1>
+
+      <% if blog_settings.subtitle %>
+        <p><%= blog_settings.subtitle %></p>
+      <% end %>
+    </div>
+  </div>
+</header>

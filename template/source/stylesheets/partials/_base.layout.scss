@@ -1,0 +1,45 @@
+.container {
+  background: $bg-body;
+  border-radius: $bd-radius;
+  box-shadow: 0 1px 2px 0 rgba($shadow-base, 0.3);
+  margin: -$bd-radius auto 0;
+  max-width: $layout-container;
+  padding-bottom: $space-lg - $type-base;
+  padding-top: $space-lg;
+
+  @media (max-width: $breakpoint-med) {
+    max-width: $layout-container * $breakpoint-med-scale;
+    padding-bottom: ($space-lg - $type-base) * $breakpoint-med-scale;
+    padding-top: $space-lg * $breakpoint-med-scale;
+  }
+
+  @media (max-width: $breakpoint-sm) {
+    border-radius: 0;
+    margin-top: 0;
+  }
+
+  @media (max-width: $breakpoint-xs) {
+    padding-bottom: ($space-lg - $type-base) * $breakpoint-xs-scale;
+    padding-top: $space-lg * $breakpoint-xs-scale;
+  }
+}
+
+.wrapper {
+  margin: 0 auto;
+  max-width: $layout-wrapper;
+  padding: 0 $type-base;
+
+  &::before,
+  &::after {
+    content: " ";
+    display: table;
+  }
+
+  &::after {
+    clear: both;
+  }
+
+  @media (max-width: $breakpoint-med) {
+    max-width: $layout-wrapper * $breakpoint-med-scale;
+  }
+}

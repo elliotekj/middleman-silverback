@@ -1,0 +1,21 @@
+<h2 class="heading--title">Archive for
+  <% case page_type
+     when 'day' %>
+    <%= Date.new(year, month, day).strftime('%B %e, %Y') %>
+  <% when 'month' %>
+    <%= Date.new(year, month, 1).strftime('%B %Y') %>
+  <% when 'year' %>
+    <%= year %>
+  <% end %>
+</h2>
+
+<div class="archive archive--calendar">
+  <ol>
+    <% page_articles.each_with_index do |article, i| %>
+      <li>
+        <time class="archive__time" datetime="<%= article.date.iso8601 %>"><%= article.date.strftime('%b %e') %></time>
+        <h4 class="archive__title"><%= link_to article.title, article %></h4>
+      </li>
+    <% end %>
+  </ol>
+</div>

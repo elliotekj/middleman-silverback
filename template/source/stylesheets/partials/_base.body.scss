@@ -1,0 +1,17 @@
+body {
+  background: linear-gradient(to bottom, darken($col-body, 10), $col-body) fixed;
+  color: $col-body;
+  font-family: $type-serif;
+  font-size: $type-base;
+  -webkit-font-smoothing: antialiased;
+  line-height: $lh;
+  padding: ($space-lg + 2) 0 0;
+
+  @media (max-width: $breakpoint-med) {
+    padding-top: ($space-lg + 2) * $breakpoint-med-scale;
+  }
+
+  @media (max-width: $breakpoint-xs) {
+    padding-top: ($space-lg + 2) * $breakpoint-xs-scale;
+  }
+}
